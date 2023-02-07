@@ -1,10 +1,10 @@
 import AppLoading from 'expo-app-loading';
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, SafeAreaView } from 'react-native';
 import { useFonts } from 'expo-font';
 import { Themes } from './assets/Themes';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Footer } from './app/components'
+import { Footer, Header, Body } from './app/components'
 
 /* This is the home screen used for the navigation system, we'll
  * learn more about in the coming weeks! 
@@ -14,21 +14,11 @@ function HomeScreen() {
   /* insert your code here */
 
   return (
-    <View style={styles.container}>
-    <Text
-      style={{
-        fontFamily: 'Sydney', // test to see if the font is loaded, feel free to remove this
-      }}>
-      Open up App.js to start working on your app!
-    </Text>
-    <Text
-      style={{
-        fontFamily: 'Sydney-Bold', // test to see if the font is loaded, feel free to remove this
-      }}>
-      ~Good luck~
-    </Text>
-  </View>
-  );
+    <SafeAreaView style={styles.container}>
+      <Header/>
+      <Body/>
+      </SafeAreaView>
+      );
 }
 
 const Tab = createBottomTabNavigator();
@@ -57,8 +47,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#F5F5DC",
   },
 });
